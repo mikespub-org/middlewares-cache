@@ -10,10 +10,11 @@ Middleware components with the following cache utilities:
 * [CachePrevention](#cacheprevention)
 * [Expires](#expires)
 * [Cache](#cache)
+* [ClearSiteData](#clearsitedata)
 
 ## Requirements
 
-* PHP >= 7.2
+* PHP >= 8.2
 * A [PSR-7 http library](https://github.com/middlewares/awesome-psr15-middlewares#psr-7-implementations)
 * A [PSR-15 middleware dispatcher](https://github.com/middlewares/awesome-psr15-middlewares#dispatcher)
 
@@ -69,7 +70,7 @@ $expires = (new Middlewares\Expires($durations))->defaultExpires($default);
 
 ## Cache
 
-Saves the response headers in a [PSR-6 cache pool](http://www.php-fig.org/psr/psr-6/) and returns `304` responses (Not modified) if the response is still valid. This saves server resources and bandwidth because the body is returned empty. It's recomended to combine it with `Expires` to set the lifetime of the responses.
+Saves the response headers in a [PSR-6 cache pool](http://www.php-fig.org/psr/psr-6/) and returns `304` responses (Not modified) if the response is still valid (based on its `ETag` or `Last-Modified` header). This saves server resources and bandwidth because the body is returned empty. It's recomended to combine it with `Expires` to set the lifetime of the responses.
 
 ```php
 $cachePool = new Psr6CachePool();

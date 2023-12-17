@@ -1,5 +1,5 @@
 {
-    "name": "mikespub/middlewares-cache",
+    "name": "middlewares/cache",
     "type": "library",
     "description": "Middleware with various cache utilities",
     "license": "MIT",
@@ -15,7 +15,7 @@
     },
     "require": {
         "php": ">=8.1",
-        "middlewares/utils": "^3.3",
+        "middlewares/utils": "^4.0",
         "mikespub/micheh-psr7-cache": "^2.0",
         "psr/cache": "^1.0 || ^2.0 || ^3.0",
         "psr/http-server-middleware": "^1.0"
